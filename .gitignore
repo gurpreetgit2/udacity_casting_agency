@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+*.env
+*.venv
+
+# Flask & database files
+instance/
+migrations/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Logs
+logs/
+*.log
+nohup.out
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Auth0 JSON/Web Token cache
+.auth0.json
+
+# Python package files
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Docker & Kubernetes
+docker-compose.override.yml
+*.dockerignore
+
+# Jupyter Notebooks (if using)
+.ipynb_checkpoints/
