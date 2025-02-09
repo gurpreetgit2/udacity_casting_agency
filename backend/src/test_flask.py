@@ -8,7 +8,7 @@ from .api import create_app  # Import a factory function if available
 
 
 class CastingAgencyTestCase(unittest.TestCase):
-    """This class represents the test case for the Casting Agency API"""
+    """This class has the test cases for the Casting Agency API"""
 
     @classmethod
     def setUpClass(cls):
@@ -39,12 +39,14 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.director_token = os.getenv("DIRECTOR_TOKEN")
         self.assistant_token = os.getenv("ASSISTANT_TOKEN")
 
+        # assert if tokens are available before running other test cases
         assert self.producer_token, "PRODUCER_TOKEN not found in .env"
         assert self.director_token, "DIRECTOR_TOKEN not found in .env"
         assert self.assistant_token, "ASSISTANT_TOKEN not found in .env"
 
-        self.new_actor = {"name": "John Doe", "age": 30, "gender": "Male"}
-        self.new_movie = {"title": "Inception", "release_date": "2025-01-01"}
+        # sample data addition
+        self.new_actor = {"name": "Johny Depp", "age": 60, "gender": "Male"}
+        self.new_movie = {"title": "Matrix", "release_date": "2020-01-01"}
 
     def tearDown(self):
         """Clean up the database after each test."""
@@ -56,7 +58,6 @@ class CastingAgencyTestCase(unittest.TestCase):
     def test_get_actors_success(self):
         actor = Actor(name="Test Actor", age=40, gender="Female")
         actor.insert()
-        print(self.assistant_token)
         response = self.client.get(
             "/actors", headers={"Authorization": f"Bearer {self.assistant_token}"}
         )

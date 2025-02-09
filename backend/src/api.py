@@ -20,6 +20,9 @@ logging.basicConfig(
 
 
 def create_app(test_config=None):
+    """
+    This method is used to create app based on test config
+    """
     app = Flask(__name__)
 
     if test_config is None:
