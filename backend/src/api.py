@@ -5,8 +5,13 @@ from sqlalchemy import exc
 import json
 from flask_cors import CORS
 
-from .models import db_drop_and_create_all, setup_db, Movie, Actor
-from .auth.auth import AuthError, requires_auth
+# these are for flaks run command
+# from .models import db_drop_and_create_all, setup_db, Movie, Actor
+# from .auth.auth import AuthError, requires_auth
+
+# these imports are for gunicorn --chdir backend/src "api:create_app()" command
+from models import db_drop_and_create_all, setup_db, Movie, Actor
+from auth.auth import AuthError, requires_auth
 
 # Set up logging
 log_dir = "logs"
