@@ -40,7 +40,7 @@ This is a RESTful API for managing movies and actors. The API supports authentic
     TEST_DATABASE_NAME=test_casting_agency
     DATABASE_URL=postgresql://postgre:pass1234@localhost:5432/
 
-    # Auth0 Configuration (Replace with actual values)
+    # Auth0 Configuration - Must for running on Render (Replace with actual values)
     AUTH0_DOMAIN=dev-test.auth0.com
     API_AUDIENCE=https://casting-agency/api
     ALGORITHMS=RS256
@@ -48,7 +48,7 @@ This is a RESTful API for managing movies and actors. The API supports authentic
     # Logging
     LOG_DIR=backend/logs
 
-    # Tokens (Replace with actual values - can be obtained by using auth0 URL for your API)
+    # Tokens for testing only (Replace with actual values - can be obtained by using auth0 URL for your API)
     DIRECTOR_TOKEN=eqwer
     PRODUCER_TOKEN=1234
     ASSISTANT_TOKEN=abcd
@@ -165,7 +165,8 @@ Common error codes:
 - `500`: Internal server error
 
 ## Authentication
-This API uses Auth0 for authentication. Each request requiring authentication must include a valid `Authorization: Bearer <ACCESS_TOKEN>` header.
+- This API uses Auth0 for authentication. Each request requiring authentication must include a valid `Authorization: Bearer <ACCESS_TOKEN>` header.
+- There are three roles as per casting agency project description.
 
 ## Logging
 Logs are stored in the `logs/execution.log` file.
