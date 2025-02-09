@@ -30,15 +30,48 @@ This is a RESTful API for managing movies and actors. The API supports authentic
    ```
 
 4. Set up environment variables:
-   - Database and Auth0 configuration should be stored in a `.env` file (not included in the repository).
    - Flask-related environment variables should be in a `.flaskenv` file.
+   - Database and Auth0 configuration should be stored in a `.env` file (not included in the  
+     repository). All variable with sample values are as follows.
 
-### Running the Server
+    ```sh
+    # Database Configuration
+    DATABASE_NAME=casting_agency
+    TEST_DATABASE_NAME=test_casting_agency
+    DATABASE_URL=postgresql://postgre:pass1234@localhost:5432/
+
+    # Auth0 Configuration (Replace with actual values)
+    AUTH0_DOMAIN=dev-test.auth0.com
+    API_AUDIENCE=https://casting-agency/api
+    ALGORITHMS=RS256
+
+    # Logging
+    LOG_DIR=backend/logs
+
+    # Tokens (Replace with actual values - can be obtained by using auth0 URL for your API)
+    DIRECTOR_TOKEN=eqwer
+    PRODUCER_TOKEN=1234
+    ASSISTANT_TOKEN=abcd
+    ```
+
+
+### Running the application
+To start the PostgreSQL, run:
+```sh
+pg_ctl -D /opt/homebrew/var/postgres start
+```
+
 To start the Flask application, run:
 ```sh
 flask run
 ```
 This will start the API server using the configuration from `.flaskenv`.
+
+### Test the application
+to run tests, run:
+```sh
+python -m unittest backend/src/test_flask.py -v
+```
 
 ## API Endpoints
 
